@@ -25,10 +25,12 @@
 }
 
 .messages {
+  display: flex;
   // browser or CRA webpack ignore 0px that's why I use 1px here instead of 0
   flex: 1 1 1px;
   overflow: scroll;
   padding-top: 24px;
+  flex-direction: column;
 }
 
 .deleteButton {

@@ -1,8 +1,11 @@
 @import "mixins";
 
-@include colors(
-  $gray: #B4BEC6,
-  $green: #87D545,
-  $green-secondary: #52D48C,
-)
+$colors: (
+        "gray": #B4BEC6,
+        "green": #87D545,
+        "green-secondary": #52D48C,
+        "red-secondary": #D14D3E,
+);
+
+@include colors($colors)
 

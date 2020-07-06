@@ -12,7 +12,14 @@
   display: grid;
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 115px);
+  grid-auto-rows: 115px;
   background-color: #dedede;
   grid-gap: 1px;
+  margin-top: 40px;
+  border-bottom: 1px solid #dedede;
+}
+
+.startDate {
+  margin-top: 6px;
+  margin-bottom: 20px;
 }

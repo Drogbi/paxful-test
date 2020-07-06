@@ -16,7 +16,6 @@ interface TradesChatInputProps {
 export const TradesChatInput: React.FC<TradesChatInputProps> = (props) => {
     const [inputValue, setInputValue] = useState('');
     const isUserChanged = useValue(false);
-    const { id: selectedTradeId } = useParams<{ id: string }>();
     const currentUser = useTypedSelector<UserModel>((state) => state.currentUser as UserModel);
     const myUserProfile = useTypedSelector((state) => state.myUserProfile as UserModel);
     const trade = useCurrentTrade();
@@ -44,7 +43,7 @@ export const TradesChatInput: React.FC<TradesChatInputProps> = (props) => {
         const { id, name, avatarUrl } = currentUser;
         if (inputValue) {
             dispatch(addTradeMessage({
-                tradeId: +selectedTradeId,
+                trade,
                 message: { author: { id, name, avatarUrl }, content: inputValue, datetime: new Date().toDateString() }
             }));
             clearInput();

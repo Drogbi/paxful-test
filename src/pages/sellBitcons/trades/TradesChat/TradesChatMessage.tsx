@@ -11,9 +11,9 @@ interface TradesChatMessageProps {
 
 export const TradesChatMessage: React.FC<TradesChatMessageProps> = ({ message, isCurrentUserMessage }) => {
     return (
-        <div className={ cx(css.message, isCurrentUserMessage && css.currentUserMessage) }>
+        <div className={ cx(css.message, isCurrentUserMessage ? css.currentUser : css.tradeUser) }>
+            <Avatar className={ css.avatar } title={ message.author.name } url={ message.author.avatarUrl }/>
             <div className={ css.content }>{ message.content }</div>
-            <Avatar title={ message.author.name } url={ message.author.avatarUrl }/>
         </div>
     );
 };

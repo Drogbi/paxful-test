@@ -1,7 +1,32 @@
 .message {
   display: flex;
+  margin: 12px 0;
 }
 
-.currentUserMessage > *:first-child {
-  margin-left: auto;
+.tradeUser {
+  .content {
+    order: 1;
+    margin-left: 58px;
+    margin-right: 12px;
+    background-color: #5C7394;
+    color: white;
+  }
+  .avatar {
+    order: 2;
+  }
+}
+
+.currentUser {
+  .content {
+    margin-right: 58px;
+    margin-left: 12px;
+  }
+}
+
+.content {
+  background-color: white;
+  border: 1px solid #dedede;
+  width: 100%;
+  border-radius: 3px;
+  padding: 12px;
 }

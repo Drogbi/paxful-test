@@ -1,6 +1,8 @@
+@import "src/shared/styles/colors";
+
 .tradesChatInput {
   display: flex;
-  padding: 12px 30px;
+  padding: 12px 24px;
   background-color: white;
   margin: 0 -20px;
   border: 2px solid #dedede;
@@ -10,6 +12,7 @@
   border: none;
   width: 100%;
   font-size: 20px;
+  margin-left: 12px;
 
   &:focus, &:active {
     outline: none;
@@ -20,12 +23,13 @@
   background: none;
   border: none;
   font-size: 14px;
-  color: mediumseagreen;
+  color: map_get($colors, 'green-secondary');
   font-weight: bold;
   &:focus, &:active {
     outline: none;
   }
   &:hover {
     cursor: pointer;
+    color: darken(map_get($colors, 'green-secondary'), 10%);
   }
 }

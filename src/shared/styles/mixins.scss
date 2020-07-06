@@ -7,9 +7,8 @@
   }
 }
 
-@mixin colors($colors...) {
-  @debug keywords($colors);
-  @each $name, $value in keywords($colors) {
+@mixin colors($colors) {
+  @each $name, $value in $colors {
     @include color($name, $value);
   }
 }

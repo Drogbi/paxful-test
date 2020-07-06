@@ -23,6 +23,7 @@ export interface TradeModel {
     messages: MessageModel[];
     isNewMessagesAvailable: boolean;
     tradeHash: string;
+    startDate: string;
 }
 
 export interface InitialDataModel {

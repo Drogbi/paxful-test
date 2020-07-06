@@ -1,3 +1,5 @@
+@import "src/shared/styles/colors.scss";
+
 .tradeItem {
   display: flex;
   text-decoration: none;
@@ -45,5 +47,16 @@
     border-right: 1px solid #dedede;
     border-radius: 3px;
     transition: transform 150ms ease-out;
+  }
+}
+
+.notificationIcon {
+  margin: 5px 7px;
+  min-width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: map-get($colors, 'gray');
+  &Active {
+    background-color: map-get($colors, 'green-secondary');
   }
 }

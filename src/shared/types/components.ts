@@ -11,7 +11,7 @@ export interface IHaveClassname {
     className?: string;
 }
 
-export type Color = 'gray' | 'green' | 'green-secondary';
+export type Color = 'gray' | 'green' | 'green-secondary' | 'red' | 'red-secondary';
 
 export interface IHaveColor {
     color?: Color;
