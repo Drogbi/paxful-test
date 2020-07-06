@@ -1,13 +1,11 @@
-import React, { Ref, RefObject, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import css from './TradesChatInput.module.scss';
 import { useDispatch } from 'react-redux';
 import { addTradeMessage } from '../tradesSlice';
-import { useTypedSelector } from '../../../../shared/hooks';
+import { useTypedSelector, useValue } from '../../../../shared/hooks';
 import { UserModel } from '../../../../shared/types';
-import { useParams } from 'react-router-dom';
-import { Switch } from '../../../../shared/components';
-import { changeUser } from '../../../../shared/reducers/currentUserSlice'
-import { useValue } from '../../../../shared/hooks/useValue';
+import { Avatar, Switch } from '../../../../shared/components';
+import { changeUser } from '../../../../shared/reducers/currentUserSlice';
 import { useCurrentTrade } from '../hooks';
 
 interface TradesChatInputProps {
@@ -53,6 +51,7 @@ export const TradesChatInput: React.FC<TradesChatInputProps> = (props) => {
 
     return (
         <div className={ css.tradesChatInput }>
+            <Avatar className={ css.avatar } url={ currentUser.avatarUrl }/>
             <Switch { ...isUserChanged } value={ currentUser.id !== myUserProfile.id }/>
             <input className={ css.input } onKeyDown={ handleKeyDown } value={ inputValue } onChange={ (e) => setInputValue(e.target.value) } type="text"/>
             <button className={ css.sendButton } onClick={ onSend }>SEND</button>

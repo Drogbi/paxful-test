@@ -1,17 +1,20 @@
 import React from 'react';
 import css from './Switch.module.scss';
-import { IEditable } from '../../types';
+import { IEditable, IHaveColor } from '../../types';
+import cx from 'classnames';
 
-interface SwitchProps extends IEditable<boolean>{
+interface SwitchProps extends IEditable<boolean>, IHaveColor{
 
 }
 
-export const Switch: React.FC<SwitchProps> = ({ value, onChange }) => {
+export const Switch: React.FC<SwitchProps> = ({ value, onChange, color }) => {
     const onValueChange = (e: React.ChangeEvent<{ checked: boolean }>) => onChange(e.target.checked)
+    const switchColor = color ? `color-${ color }` : 'color-green-secondary';
+
     return (
         <label className={ css.switch }>
-            <input onChange={ onValueChange } type="checkbox" checked={ value }/>
-            <span className={ css.slider }/>
+            <input className={ css[switchColor] } onChange={ onValueChange } type="checkbox" checked={ value }/>
+            <span className={ cx(css.slider, css[switchColor]) }/>
         </label>
     );
 };
