@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Header } from './shared/components';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { SellBitcoinsPage } from './pages/sellBitcons/SellBitcoinsPage';
+import { Provider } from 'react-redux';
+import { store } from './shared/store';
+import { SELL_BITCOINS_ROUTE } from './shared/constants';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Provider store={ store }>
+                <Router>
+                    <Header/>
+                    <Switch>
+                        <Route path={ SELL_BITCOINS_ROUTE }>
+                            <SellBitcoinsPage/>
+                        </Route>
+                    </Switch>
+                </Router>
+            </Provider>
+        </div>
+    );
 }
 
 export default App;

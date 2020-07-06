@@ -1,0 +1,7 @@
+.message {
+  display: flex;
+}
+
+.currentUserMessage > *:first-child {
+  margin-left: auto;
+}

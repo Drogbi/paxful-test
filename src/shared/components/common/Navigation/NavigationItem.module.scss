@@ -1,0 +1,15 @@
+.navigationItem {
+  border-right: 1px solid #eaeaea;
+  border-left: 1px solid #eaeaea;
+  padding: 27px 42px;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  &:not(:first-child) {
+    margin-left: -1px;
+  }
+}
+
+.active {
+  background-color: #f5fbff;
+}

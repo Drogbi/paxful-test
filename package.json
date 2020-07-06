@@ -3,16 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/classnames": "^2.2.10",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-router-dom": "^5.1.5",
+    "classnames": "^2.2.6",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -22,7 +34,26 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app"
+    ],
+    "rules": {
+      "react/jsx-indent": [
+        "warn",
+        4
+      ],
+      "react/jsx-indent-props": [
+        "warn",
+        4
+      ],
+      "react/jsx-closing-tag-location": [
+        "warn"
+      ],
+      "react/jsx-curly-spacing": [
+        2,
+        "always"
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -35,5 +66,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "@typescript-eslint/eslint-plugin": "2.23.0",
+    "@typescript-eslint/parser": "2.23.0",
+    "@typescript-eslint/typescript-estree": "2.23.0"
   }
 }

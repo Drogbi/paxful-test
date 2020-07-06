@@ -1,0 +1,31 @@
+.tradesChatInput {
+  display: flex;
+  padding: 12px 30px;
+  background-color: white;
+  margin: 0 -20px;
+  border: 2px solid #dedede;
+}
+
+.input {
+  border: none;
+  width: 100%;
+  font-size: 20px;
+
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+.sendButton {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: mediumseagreen;
+  font-weight: bold;
+  &:focus, &:active {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,39 @@
+.chat {
+  flex: 2 1 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F7FA;
+  padding: 36px 45px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 24px;
+}
+
+.product {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.user {
+  font-size: 18px;
+}
+
+.messages {
+  // browser or CRA webpack ignore 0px that's why I use 1px here instead of 0
+  flex: 1 1 1px;
+  overflow: scroll;
+  padding-top: 24px;
+}
+
+.deleteButton {
+  position: absolute;
+  left: 0;
+}
+
+

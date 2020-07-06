@@ -1,0 +1,15 @@
+@mixin color($name, $value) {
+  &.color-#{$name} {
+    --color: #{$value};
+    &:hover {
+      --color: #{darken($value, 10%)};
+    }
+  }
+}
+
+@mixin colors($colors...) {
+  @debug keywords($colors);
+  @each $name, $value in keywords($colors) {
+    @include color($name, $value);
+  }
+}

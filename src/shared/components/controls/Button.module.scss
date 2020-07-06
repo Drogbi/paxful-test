@@ -1,0 +1,21 @@
+.button {
+  @import "src/shared/styles/colors.scss";
+
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 100px;
+  min-width: 45px;
+  background-color: var(--color);
+  font-size: 18px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.label {
+  padding: 0 6px;
+}
+
+
