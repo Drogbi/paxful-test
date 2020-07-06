@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { releaseTrade, reopenTrade } from '../tradesSlice';
 import { TradeStatus } from '../../../../shared/types';
 import { TradeItemInfoBlock } from './TradeItemInfoBlock';
+import { useBitcoinAmount } from '../../../../shared/hooks';
 
 interface TradeItemInfoProps {
 
@@ -15,6 +16,7 @@ export const TradeItemInfo: React.FC<TradeItemInfoProps> = (props) => {
     const trade = useCurrentTrade();
     const user = trade.user;
     const dispatch = useDispatch();
+    const bitcoinAmount = useBitcoinAmount(user.amountBalance)
 
     const onRelease = () => {
         dispatch(releaseTrade(trade));
@@ -45,7 +47,7 @@ export const TradeItemInfo: React.FC<TradeItemInfoProps> = (props) => {
                 <TradeItemInfoBlock label='TRADE STATUS'>{ trade.status }</TradeItemInfoBlock>
                 <TradeItemInfoBlock label='TRADE HASH'>{ trade.tradeHash }</TradeItemInfoBlock>
                 <TradeItemInfoBlock label={ `AMOUNT ${ user.amountBalance.currency }` }>{ user.amountBalance.value }</TradeItemInfoBlock>
-                <TradeItemInfoBlock label='AMOUNT BTC'></TradeItemInfoBlock>
+                <TradeItemInfoBlock label='AMOUNT BTC'>{ bitcoinAmount.value }</TradeItemInfoBlock>
             </div>
         </div>
     );

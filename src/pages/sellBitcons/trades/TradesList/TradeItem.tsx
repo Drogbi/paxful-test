@@ -1,22 +1,25 @@
 import React, { useEffect } from 'react';
 import css from './TradeItem.module.scss';
-import { TradeModel, UserModel } from '../../../../shared/types';
+import { Currency, TradeModel, UserModel } from '../../../../shared/types';
 import { Link, useRouteMatch } from 'react-router-dom';
 import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../../../shared/constants';
 import { Avatar } from '../../../../shared/components';
 import cx from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { readMessages } from '../tradesSlice';
-import { useTypedSelector } from '../../../../shared/hooks';
+import { useBitcoinAmount, useTypedSelector } from '../../../../shared/hooks';
 
 interface TradeItemProps {
     item: TradeModel;
 }
 
+
 export const TradeItem: React.FC<TradeItemProps> = ({ item }) => {
     const match = useRouteMatch(`${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/${ item.id }`);
     const myUserProfile = useTypedSelector((state) => state.myUserProfile) as UserModel;
     const currentUser = useTypedSelector((state) => state.currentUser) as UserModel;
+    const bitcoinPrice = useBitcoinAmount(item.price);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -24,6 +27,8 @@ export const TradeItem: React.FC<TradeItemProps> = ({ item }) => {
             dispatch(readMessages(item));
         }
     }, [match]);
+
+
 
     return (
         <Link className={ cx(css.tradeItem, match && css.active) } to={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/${ item.id }` }>
@@ -37,6 +42,9 @@ export const TradeItem: React.FC<TradeItemProps> = ({ item }) => {
                 </div>
                 <div className={ css.price }>
                     { `${ item.price.value } ${ item.price.currency }` }
+                </div>
+                <div className={ css.bitcoinPrice }>
+                    { bitcoinPrice.isLoading ? 'Loading...' : `(${ bitcoinPrice.value } BTC)` }
                 </div>
             </div>
             <div className={ css.status }>

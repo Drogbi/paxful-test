@@ -3,7 +3,7 @@ export interface UserModel {
     name: string;
     avatarUrl?: string;
     tradesCount: number;
-    amountBalance: { currency: Currency, value: number }
+    amountBalance: CurrencyAmountModel;
     rating: { likes: number, dislikes: number }
 }
 
@@ -16,7 +16,7 @@ export interface MessageModel {
 export interface TradeModel {
     id: number;
     product: { id: number, name: string };
-    price: { currency: Currency, value: number };
+    price: CurrencyAmountModel;
     type: TradeType;
     status: TradeStatus;
     user: UserModel;
@@ -32,8 +32,8 @@ export interface InitialDataModel {
 }
 
 export enum Currency {
-    USD = "USD",
-    EUR = "EUR"
+    USD = 'USD',
+    EUR = 'EUR'
 }
 
 export enum TradeStatus {
@@ -44,4 +44,9 @@ export enum TradeStatus {
 export enum TradeType {
     BUYING = 'BUYING',
     SELLING = 'SELLING'
+}
+
+export interface CurrencyAmountModel {
+    currency: Currency,
+    value: number
 }

@@ -24,7 +24,7 @@ export const initialData: InitialDataModel = {
             user: {
                 id: 1,
                 name: 'Alex',
-                amountBalance: { currency: Currency.USD, value: 100 },
+                amountBalance: { currency: Currency.USD, value: 400 },
                 avatarUrl: 'https://i.pravatar.cc/150?img=2',
                 tradesCount: 31,
                 rating: { likes: 34, dislikes: 8 }
@@ -77,7 +77,7 @@ export const initialData: InitialDataModel = {
                 id: 1,
                 name: 'Alex',
                 avatarUrl: 'https://i.pravatar.cc/150?img=2',
-                amountBalance: { currency: Currency.USD, value: 100 },
+                amountBalance: { currency: Currency.USD, value: 400 },
                 tradesCount: 31,
                 rating: { likes: 34, dislikes: 8 }
             },
