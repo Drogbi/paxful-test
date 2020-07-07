@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import css from './TradesList.module.scss';
 import { TradeItem } from './TradeItem';
 import { useTypedSelector } from '../../../../shared/hooks';
+import cx from 'classnames';
+import { IHaveClassname } from '../../../../shared/types';
 
-interface TradesListProps {
+interface TradesListProps extends IHaveClassname {
+    dispatch: Dispatch<any>
 }
 
-export const TradesList: React.FC<TradesListProps> = (props) => {
-    const trades = useTypedSelector(state => state.trades)
+export const TradesList: React.FC<TradesListProps> = ({ className, dispatch }) => {
+    const trades = useTypedSelector(state => state.trades);
     return (
-        <div className={ css.tradesList }>
-            {
-                trades.map((item) => <TradeItem item={ item }/>)
-            }
+        <div className={ cx(css.tradesList, className) }>
+            { trades.map((item) => <TradeItem onClick={ () => {
+                console.log('clicl');
+                dispatch({ type: 'toggle-list' })
+            } } item={ item }/>) }
         </div>
     );
 };

@@ -9,13 +9,15 @@ interface ButtonProps extends IClickable, IHaveClassname, IHaveColor {
     icon?: IconProp;
     label?: string;
     shadow?: boolean;
+    fill?: 'none' | 'solid';
 }
 
-export const Button: React.FC<ButtonProps> = ({ icon, onClick, label, className, color, shadow }) => {
-    const buttonColor = color ? `color-${ color }` : 'color-gray';
+export const Button: React.FC<ButtonProps> = ({ icon, onClick, label, className, color, shadow, fill }) => {
+    const buttonColor = color ? `color-${ color }` : 'color-primary';
+    const buttonFill = fill ? `fill-${ fill }` : 'fill-solid';
 
     return (
-        <button onClick={ onClick } className={ cx(css.button, className, css[buttonColor], shadow && css.shadow) }>
+        <button onClick={ onClick } className={ cx(css.button, className, css[buttonColor], shadow && css.shadow, css[buttonFill]) }>
             { icon && <FontAwesomeIcon icon={ icon }/> }
             { label && <span className={ css.label }>{ label }</span> }
         </button>

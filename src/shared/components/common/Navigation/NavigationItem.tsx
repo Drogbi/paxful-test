@@ -1,22 +1,35 @@
 import React from 'react';
 import css from './NavigationItem.module.scss';
-import { Link, useRouteMatch, matchPath, useLocation } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import cx from 'classnames';
+import { IClickable, IHaveClassname } from '../../../types';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-interface NavigationItemProps {
-    label: string;
-    to: string;
+interface NavigationItemProps extends IClickable, IHaveClassname {
+    label?: string;
+    to?: string;
+    isActive?: boolean;
+    icon?: IconProp;
 }
 
-export const NavigationItem: React.FC<NavigationItemProps> = ({ to, label }) => {
+export const NavigationItem: React.FC<NavigationItemProps> = ({ to, label, isActive, onClick, className, icon }) => {
     let { url } = useRouteMatch();
-    let location = useLocation();
     const path = `${ url }${ to }`;
-    const match = matchPath(location.pathname, {
-        path
-    })
 
     return (
-        <Link className={ cx(css.navigationItem, match && css.active) } to={ path }>{ label }</Link>
+        onClick
+            ? (
+                <div className={ cx(css.navigationItem, className) } onClick={ onClick }>
+                    { label }
+                    { icon && <FontAwesomeIcon icon={ icon }/> }
+                </div>
+            )
+            : (
+                <Link className={ cx(css.navigationItem, isActive && css.active, className) } to={ path }>
+                    { label }
+                    { icon && <FontAwesomeIcon icon={ icon }/> }
+                </Link>
+            )
     );
 };

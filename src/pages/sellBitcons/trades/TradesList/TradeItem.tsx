@@ -11,10 +11,11 @@ import { useBitcoinAmount, useTypedSelector } from '../../../../shared/hooks';
 
 interface TradeItemProps {
     item: TradeModel;
+    onClick: () => void
 }
 
 
-export const TradeItem: React.FC<TradeItemProps> = ({ item }) => {
+export const TradeItem: React.FC<TradeItemProps> = ({ item, onClick }) => {
     const match = useRouteMatch(`${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/${ item.id }`);
     const myUserProfile = useTypedSelector((state) => state.myUserProfile) as UserModel;
     const currentUser = useTypedSelector((state) => state.currentUser) as UserModel;
@@ -31,7 +32,7 @@ export const TradeItem: React.FC<TradeItemProps> = ({ item }) => {
 
 
     return (
-        <Link className={ cx(css.tradeItem, match && css.active) } to={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/${ item.id }` }>
+        <Link onClick={ onClick } className={ cx(css.tradeItem, match && css.active) } to={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/${ item.id }` }>
             <div title={ item.isNewMessagesAvailable ? 'New messages available' : '' } className={ cx(css.notificationIcon, item.isNewMessagesAvailable && css.notificationIconActive) }/>
             <div className={ css.info }>
                 <div className={ css.type }>

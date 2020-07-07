@@ -1,8 +1,64 @@
 .navigation {
   padding: 0 84px;
-  display: flex;
   align-content: stretch;
   box-shadow: 0 2px 5px 0 #dedede;
   position: relative;
   z-index: 1;
+  display: flex;
+  max-height: 77px;
+}
+
+.navigationItems {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.dropDownButton {
+  display: none;
+}
+
+.navItemActive {
+  background-color: #f5fbff;
+}
+
+@media (max-width: 1270px) {
+  .navigation {
+    padding: 0;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .navigation .navItemActive {
+    background-color: white;
+  }
+  .navigationItems > * {
+    display: none;
+  }
+  .openedNavigation {
+    .navigationItems {
+      flex-direction: column;
+      & > * {
+        display: block;
+        order: 1;
+      }
+      .navItemActive {
+        order: 0;
+      }
+    }
+  }
+  .navItemActive {
+    display: block;
+    flex: 1 1 auto;
+  }
+  .dropDownButton {
+    display: block;
+    position: relative;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    padding: 0;
+  }
 }

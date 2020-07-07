@@ -6,6 +6,7 @@
   padding: 40px;
   position: relative;
   box-shadow: -2px 5px 5px 0 #dedede;
+  background-color: white;
 }
 
 .info {
@@ -15,7 +16,7 @@
   grid-auto-rows: 115px;
   background-color: #dedede;
   grid-gap: 1px;
-  margin-top: 40px;
+  margin: 40px 0;
   border-bottom: 1px solid #dedede;
 }
 
@@ -23,3 +24,19 @@
   margin-top: 6px;
   margin-bottom: 20px;
 }
+
+
+//@media (max-width: 1270px) {
+//  .tradeItemInfo {
+//    display: none;
+//  }
+//  .isOpen {
+//    display: flex;
+//  }
+//}
+//
+//@media (max-width: 700px) {
+//  .isOpen {
+//
+//  }
+//}

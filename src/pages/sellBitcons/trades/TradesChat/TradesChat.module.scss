@@ -13,6 +13,7 @@
   position: relative;
   border-bottom: 1px solid #dedede;
   padding-bottom: 24px;
+  pointer-events: none;
 }
 
 .product {
@@ -35,7 +36,8 @@
 
 .deleteButton {
   position: absolute;
-  left: 0;
+  left: 60px;
 }
+
 
 

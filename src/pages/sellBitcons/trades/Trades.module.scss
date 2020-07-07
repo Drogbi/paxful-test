@@ -1,4 +1,19 @@
 .trades {
   display: flex;
   flex: 1 1 auto;
+  position: relative;
+}
+
+.tradesListOpenButton, .tradesInfoOpenButton {
+  top: 20px;
+  position: absolute;
+  z-index: 0;
+}
+
+.tradesInfoOpenButton {
+  right: 10px;
+}
+
+.tradesListOpenButton {
+  left: 10px;
 }
