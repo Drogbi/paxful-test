@@ -1,5 +1,5 @@
 import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { MessageModel, TradeModel, TradeStatus } from '../../../shared/types/data';
+import { MessageModel, TradeModel, TradeStatus } from '../../../../../shared/types/data';
 
 type State = TradeModel[];
 type CaseReducers = {

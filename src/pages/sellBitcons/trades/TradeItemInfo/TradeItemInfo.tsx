@@ -3,7 +3,7 @@ import css from './TradeItemInfo.module.scss';
 import { Avatar, Button, Rating } from '../../../../shared/components';
 import { useCurrentTrade } from '../shared/hooks';
 import { useDispatch } from 'react-redux';
-import { deleteTrade, releaseTrade, reopenTrade } from '../tradesSlice';
+import { deleteTrade, releaseTrade, reopenTrade } from '../shared/reducers/tradesSlice';
 import { IHaveClassname, TradeStatus as TradeStatusType } from '../../../../shared/types';
 import { TradeItemInfoBlock } from './TradeItemInfoBlock';
 import { useBitcoinAmount } from '../../../../shared/hooks';

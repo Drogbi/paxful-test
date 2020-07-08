@@ -35,6 +35,7 @@ export const TradesChat: React.FC<TradesChatProps> = ({ className }) => {
                     <Rating theme='secondary' className={ css.rating } { ...user.rating }/>
                 </div>
             </div>
+            { /*Scrollbars to fix ugly windows scroll */ }
             <Scrollbars>
                 <div ref={ messagesRef } className={ css.messages }>
                     { trade.messages.map((message) => <TradesChatMessage isCurrentUserMessage={ message.author.id === currentUser.id } message={ message }/>) }

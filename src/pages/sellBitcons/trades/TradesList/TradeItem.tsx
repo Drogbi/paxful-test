@@ -6,7 +6,7 @@ import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../../../shared/constants';
 import { Avatar } from '../../../../shared/components';
 import cx from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
-import { readMessages } from '../tradesSlice';
+import { readMessages } from '../shared/reducers/tradesSlice';
 import { useBitcoinAmount, useTypedSelector } from '../../../../shared/hooks';
 import { TradeStatus } from '../shared/components';
 

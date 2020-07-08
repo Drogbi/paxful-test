@@ -1,4 +1,4 @@
-import tradesReducer from '../../pages/sellBitcons/trades/tradesSlice';
+import tradesReducer from '../../pages/sellBitcons/trades/shared/reducers/tradesSlice';
 import currentUserReducer from './currentUserSlice';
 import myUserProfileReducer from './myUserProfileSlice';
 import bitcoinPriceReducer from './bitcoinPriceSlice';

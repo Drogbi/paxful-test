@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import css from './TradesChatInput.module.scss';
 import { useDispatch } from 'react-redux';
-import { addTradeMessage } from '../tradesSlice';
+import { addTradeMessage } from '../shared/reducers/tradesSlice';
 import { useTypedSelector, useValue } from '../../../../shared/hooks';
 import { UserModel } from '../../../../shared/types';
 import { Avatar, Switch } from '../../../../shared/components';
