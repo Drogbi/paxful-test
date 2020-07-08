@@ -23,8 +23,8 @@ export const TradesChat: React.FC<TradesChatProps> = ({ className }) => {
     useLayoutEffect(() => {
         messagesRef?.current?.scrollTo({
             top: messagesRef?.current.scrollHeight,
-        })
-    }, [trade.messages.length])
+        });
+    }, [trade.messages.length]);
 
     return (
         <div className={ cx(css.chat, className) }>
@@ -35,11 +35,11 @@ export const TradesChat: React.FC<TradesChatProps> = ({ className }) => {
                     <Rating theme='secondary' className={ css.rating } { ...user.rating }/>
                 </div>
             </div>
-            <Scrollbars >
-                <div ref={ messagesRef } className={ css.messages }>
+            <div ref={ messagesRef } className={ css.messages }>
+                <Scrollbars>
                     { trade.messages.map((message) => <TradesChatMessage isCurrentUserMessage={ message.author.id === currentUser.id } message={ message }/>) }
-                </div>
-            </Scrollbars>
+                </Scrollbars>
+            </div>
             <TradesChatInput/>
         </div>
     );
