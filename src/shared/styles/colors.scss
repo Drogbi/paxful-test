@@ -6,6 +6,7 @@ $colors: (
         "green": #87D545,
         "green-secondary": #52D48C,
         "red-secondary": #D14D3E,
+        "white": #FFFFFF,
 );
 
 @include colors($colors)

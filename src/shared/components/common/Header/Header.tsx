@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import css from './Header.module.scss';
 import { HeaderLink } from './HeaderLink';
-import {
-    BUY_BITCOINS_ROUTE, SELL_BITCOINS_ROUTE, SUPPORT_ROUTE, WALLET_ROUTE, YOUR_ACCOUNT_ROUTE
-} from '../../../constants';
+import { BUY_BITCOINS_ROUTE, SELL_BITCOINS_ROUTE, SUPPORT_ROUTE, WALLET_ROUTE, YOUR_ACCOUNT_ROUTE } from '../../../constants';
 import { HeaderLogo } from './HeaderLogo';
 import { Button } from '../../controls';
-import { faHamburger } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
 
 interface HeaderProps {
@@ -33,7 +31,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
                 <HeaderLink label='Support' to={ SUPPORT_ROUTE }/>
                 <HeaderLink label='Your Account' to={ YOUR_ACCOUNT_ROUTE } />
             </nav>
-            <Button className={ css.burger } onClick={ () => setIsBurgerOpen(!isBurgerOpen) } icon={ faHamburger }/>
+            <Button fill='none' color='white' className={ css.burger } onClick={ () => setIsBurgerOpen(!isBurgerOpen) } icon={ faBars }/>
         </header>
     );
 };

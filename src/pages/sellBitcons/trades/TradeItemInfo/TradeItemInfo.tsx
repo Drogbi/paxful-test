@@ -21,7 +21,7 @@ export const TradeItemInfo: React.FC<TradeItemInfoProps> = ({ isOpen, className 
     const trade = useCurrentTrade();
     const user = trade.user;
     const dispatch = useDispatch();
-    const bitcoinAmount = useBitcoinAmount(user.amountBalance)
+    const bitcoinAmount = useBitcoinAmount(trade.price)
     const history = useHistory();
 
     const onRelease = () => {
@@ -58,7 +58,7 @@ export const TradeItemInfo: React.FC<TradeItemInfoProps> = ({ isOpen, className 
                 <TradeItemInfoBlock label='# OF TRADES'>{ user.tradesCount }</TradeItemInfoBlock>
                 <TradeItemInfoBlock label='TRADE STATUS'>{ trade.status }</TradeItemInfoBlock>
                 <TradeItemInfoBlock label='TRADE HASH'>{ trade.tradeHash }</TradeItemInfoBlock>
-                <TradeItemInfoBlock label={ `AMOUNT ${ user.amountBalance.currency }` }>{ user.amountBalance.value }</TradeItemInfoBlock>
+                <TradeItemInfoBlock label={ `AMOUNT ${ trade.price.currency }` }>{ trade.price.value }</TradeItemInfoBlock>
                 <TradeItemInfoBlock label='AMOUNT BTC'>{ bitcoinAmount.value }</TradeItemInfoBlock>
             </div>
             <Button shadow color='red-secondary' label='Delete trade' className={ css.deleteButton } onClick={ onTradeDelete } icon={ faTrashAlt }/>
