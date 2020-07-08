@@ -35,6 +35,9 @@
   .navigationItems > * {
     display: none;
   }
+  .navigationItems > *:last-child {
+    border-bottom: 1px solid #eaeaea;;
+  }
   .openedNavigation {
     .navigationItems {
       flex-direction: column;
