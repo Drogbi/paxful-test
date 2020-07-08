@@ -60,12 +60,11 @@ const tradesScreenReducer = (state: any, action: any) => {
 };
 
 const initState = (screen: string, match: any) => {
-
+    if (match) {
+        return [true];
+    }
     switch (screen) {
         case 'small':
-            if (match) {
-                return [true];
-            }
             return [false, true, false];
         case 'medium':
             return [false, true, true];
@@ -93,9 +92,9 @@ export const Trades: React.FC<TradesProps> = (props) => {
 
     return (
         <div className={ css.trades }>
-            { !isListOpen && !match && <Button fill='none' icon={ faListUl } className={ css.tradesListOpenButton } onClick={ () => dispatch({ type: 'toggle-list', screenSize }) }/> }
-            { !isInfoOpen && !match && <Button fill='none' icon={ faInfoCircle } className={ css.tradesInfoOpenButton } onClick={ () => dispatch({ type: 'toggle-info', screenSize }) }/> }
-            { (isListOpen || match) && <TradesList dispatch={ dispatchWithScreenSize } className={ css.tradesList }/> }
+            { !isListOpen && !match && <Button color='gray' fill='none' icon={ faListUl } className={ css.tradesListOpenButton } onClick={ () => dispatch({ type: 'toggle-list', screenSize }) }/> }
+            { !isInfoOpen && !match && <Button color='gray' fill='none' icon={ faInfoCircle } className={ css.tradesInfoOpenButton } onClick={ () => dispatch({ type: 'toggle-info', screenSize }) }/> }
+            { (isListOpen) && <TradesList dispatch={ dispatchWithScreenSize } className={ css.tradesList }/> }
             <Switch>
                 <Route path={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/:id` }>
                     { isChatOpen && <TradesChat className={ css.tradesChat }/> }

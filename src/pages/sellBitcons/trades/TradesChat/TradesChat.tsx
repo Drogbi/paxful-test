@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import { useTypedSelector } from '../../../../shared/hooks';
 import css from './TradesChat.module.scss';
 import { useHistory } from 'react-router-dom';
@@ -24,11 +24,9 @@ export const TradesChat: React.FC<TradesChatProps> = ({ className }) => {
 
     const user = trade.user;
 
-
-    useEffect(() => {
+    useLayoutEffect(() => {
         messagesRef?.current?.scrollTo({
             top: messagesRef?.current.scrollHeight,
-            behavior: 'smooth'
         })
     }, [trade.messages.length])
 
