@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
-import css from './HeaderLink.module.scss';
 import cx from 'classnames';
+import css from './HeaderLink.module.scss';
 
 interface HeaderLinkProps {
     label: string;

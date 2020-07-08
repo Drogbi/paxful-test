@@ -1,5 +1,5 @@
-import { useTypedSelector } from './useTypedSelector';
 import { CurrencyAmountModel } from '../types';
+import { useTypedSelector } from './useTypedSelector';
 
 const getBitcoinAmount = (value: number, bitcoinPrice: number) => (value / bitcoinPrice).toFixed(8);
 

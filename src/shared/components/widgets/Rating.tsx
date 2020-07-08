@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Rating.module.scss';
-import { IHaveClassname } from '../../types';
 import cx from 'classnames';
+import { IHaveClassname } from '../../types';
+import css from './Rating.module.scss';
 
 interface RatingProps extends IHaveClassname {
     likes: number;

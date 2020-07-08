@@ -1,7 +1,7 @@
-import { Currency } from '../types';
 import { Epic, ofType } from 'redux-observable';
-import { map, mergeMap, tap } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
+import { Currency } from '../types';
 import { fetchBitcoinPrice, fetchBitcoinPriceFulfilled } from '../reducers/bitcoinPriceSlice';
 
 type FetchedPrice = { bpi: Record<Currency, { code: string, rate_float: number }> };

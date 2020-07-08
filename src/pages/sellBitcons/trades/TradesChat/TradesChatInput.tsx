@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import css from './TradesChatInput.module.scss';
 import { useDispatch } from 'react-redux';
 import { addTradeMessage } from '../shared/reducers/tradesSlice';
 import { handleChatInputChange } from '../shared/reducers/tradesChatSlice';
@@ -8,6 +7,7 @@ import { UserModel } from '../../../../shared/types';
 import { Avatar, Switch } from '../../../../shared/components';
 import { changeUser } from '../../../../shared/reducers/currentUserSlice';
 import { useCurrentTrade } from '../shared/hooks';
+import css from './TradesChatInput.module.scss';
 
 interface TradesChatInputProps {
 }

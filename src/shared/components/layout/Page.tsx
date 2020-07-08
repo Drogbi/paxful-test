@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Page.module.scss';
-import { IHaveClassname } from '../../types';
 import cx from 'classnames';
+import { IHaveClassname } from '../../types';
+import css from './Page.module.scss';
 
 interface PageProps extends IHaveClassname {
 

@@ -1,5 +1,5 @@
-import { TradesLayout } from '../types';
 import React from 'react';
+import { TradesLayout } from '../types';
 
 export type TradesLayoutState = [boolean, boolean, boolean] // tuple that represents visibility of layout parts [TradeList, TradeChat, TradeItemInfo];
 export type TradesLayoutAction =

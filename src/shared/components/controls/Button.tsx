@@ -1,9 +1,9 @@
 import React from 'react';
-import css from './Button.module.scss';
-import { IClickable, IHaveClassname, IHaveColor } from '../../types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import cx from 'classnames';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IClickable, IHaveClassname, IHaveColor } from '../../types';
+import css from './Button.module.scss';
 
 interface ButtonProps extends IClickable, IHaveClassname, IHaveColor {
     icon?: IconProp;

@@ -1,7 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import css from './App.module.scss';
 import { Header, PagePlaceholder } from './shared/components';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { SellBitcoinsPage } from './pages/sellBitcons/SellBitcoinsPage';
 import { SELL_BITCOINS_ROUTE } from './shared/constants';
 import { useBitcoinSubscription } from './shared/hooks/useBitcoinPriceSubscription';

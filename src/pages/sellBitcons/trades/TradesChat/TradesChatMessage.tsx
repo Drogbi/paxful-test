@@ -1,9 +1,9 @@
 import React from 'react';
-import css from './TradesChatMessage.module.scss';
-import { MessageModel } from '../../../../shared/types';
-import { Avatar } from '../../../../shared/components';
 import cx from 'classnames';
 import moment from 'moment';
+import { MessageModel } from '../../../../shared/types';
+import { Avatar } from '../../../../shared/components';
+import css from './TradesChatMessage.module.scss';
 
 interface TradesChatMessageProps {
     message: MessageModel;

@@ -1,10 +1,10 @@
 import React from 'react';
-import css from './NavigationItem.module.scss';
 import { Link, useRouteMatch } from 'react-router-dom';
 import cx from 'classnames';
-import { IClickable, IHaveClassname } from '../../../types';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IClickable, IHaveClassname } from '../../../types';
+import css from './NavigationItem.module.scss';
 
 interface NavigationItemProps extends IClickable, IHaveClassname {
     label?: string;

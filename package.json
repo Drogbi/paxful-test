@@ -19,6 +19,7 @@
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.5",
     "classnames": "^2.2.6",
+    "eslint-plugin-import": "^2.22.0",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -37,11 +38,15 @@
     "start": "react-scripts start",
     "build": "CI= react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint \"./src/**/*.{ts,tsx}\""
   },
   "eslintConfig": {
     "extends": [
       "react-app"
+    ],
+    "plugins": [
+      "import"
     ],
     "rules": {
       "react/jsx-indent": [
@@ -58,7 +63,8 @@
       "react/jsx-curly-spacing": [
         2,
         "always"
-      ]
+      ],
+      "import/order": 2
     }
   },
   "browserslist": {

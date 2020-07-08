@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import css from './Navigation.module.scss';
-import { NavigationItem } from './NavigationItem';
 import { matchPath, useLocation, useRouteMatch } from 'react-router-dom';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
+import { NavigationItem } from './NavigationItem';
+import css from './Navigation.module.scss';
 
 interface NavigationProps {
     items: { to: string, label: string }[];

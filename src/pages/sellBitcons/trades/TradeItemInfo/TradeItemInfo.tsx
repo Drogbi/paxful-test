@@ -1,18 +1,18 @@
 import React, { Dispatch } from 'react';
-import css from './TradeItemInfo.module.scss';
-import { Avatar, Button, Rating } from '../../../../shared/components';
-import { useCurrentTrade } from '../shared/hooks';
 import { useDispatch } from 'react-redux';
-import { deleteTrade, releaseTrade, reopenTrade } from '../shared/reducers/tradesSlice';
-import { IHaveClassname, TradeStatus as TradeStatusType } from '../../../../shared/types';
-import { TradeItemInfoBlock } from './TradeItemInfoBlock';
-import { useBitcoinAmount } from '../../../../shared/hooks';
 import cx from 'classnames';
 import { faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../../../shared/constants';
 import { useHistory } from 'react-router-dom';
-import { TradeItemInfoDate } from './TradeItemInfoDate';
+import { Avatar, Button, Rating } from '../../../../shared/components';
+import { useCurrentTrade } from '../shared/hooks';
+import { deleteTrade, releaseTrade, reopenTrade } from '../shared/reducers/tradesSlice';
+import { IHaveClassname, TradeStatus as TradeStatusType } from '../../../../shared/types';
+import { useBitcoinAmount } from '../../../../shared/hooks';
+import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../../../shared/constants';
 import { TradeStatus } from '../shared/components';
+import { TradeItemInfoBlock } from './TradeItemInfoBlock';
+import { TradeItemInfoDate } from './TradeItemInfoDate';
+import css from './TradeItemInfo.module.scss';
 
 interface TradeItemInfoProps extends IHaveClassname {
     dispatch: Dispatch<any>;

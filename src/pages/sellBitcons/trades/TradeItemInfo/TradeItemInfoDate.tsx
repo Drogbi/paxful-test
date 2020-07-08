@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
-import css from './TradeItemInfoDate.module.scss';
 import moment from 'moment';
 import { timer } from 'rxjs';
+import css from './TradeItemInfoDate.module.scss';
 
 interface TradeItemInfoDateProps {
     date: string;

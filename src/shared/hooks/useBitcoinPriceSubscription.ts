@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { timer } from 'rxjs';
+import { useEffect } from 'react';
 import { fetchBitcoinPrice } from '../reducers/bitcoinPriceSlice';
 import { Currency } from '../types';
-import { useEffect } from 'react';
 
 export const useBitcoinSubscription = () => {
     const dispatch = useDispatch();

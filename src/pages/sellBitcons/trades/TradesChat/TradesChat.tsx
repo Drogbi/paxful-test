@@ -1,13 +1,13 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import { useTypedSelector } from '../../../../shared/hooks';
-import css from './TradesChat.module.scss';
-import { TradesChatMessage } from './TradesChatMessage';
-import { IHaveClassname, UserModel } from '../../../../shared/types';
-import { TradesChatInput } from './TradesChatInput';
-import { Rating } from '../../../../shared/components';
-import { useCurrentTrade } from '../shared/hooks';
 import cx from 'classnames';
 import { Scrollbars } from 'react-custom-scrollbars';
+import { useTypedSelector } from '../../../../shared/hooks';
+import { IHaveClassname, UserModel } from '../../../../shared/types';
+import { Rating } from '../../../../shared/components';
+import { useCurrentTrade } from '../shared/hooks';
+import css from './TradesChat.module.scss';
+import { TradesChatMessage } from './TradesChatMessage';
+import { TradesChatInput } from './TradesChatInput';
 
 interface TradesChatProps extends IHaveClassname {
 

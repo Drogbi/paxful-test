@@ -1,9 +1,9 @@
 import React from 'react';
-import css from './Avatar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { IHaveClassname } from '../../types';
 import cx from 'classnames';
+import { IHaveClassname } from '../../types';
+import css from './Avatar.module.scss';
 
 interface AvatarProps extends IHaveClassname {
     url?: string;

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import css from './Header.module.scss';
-import { HeaderLink } from './HeaderLink';
-import { BUY_BITCOINS_ROUTE, SELL_BITCOINS_ROUTE, SUPPORT_ROUTE, WALLET_ROUTE, YOUR_ACCOUNT_ROUTE } from '../../../constants';
-import { HeaderLogo } from './HeaderLogo';
-import { Button } from '../../controls';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
+import { BUY_BITCOINS_ROUTE, SELL_BITCOINS_ROUTE, SUPPORT_ROUTE, WALLET_ROUTE, YOUR_ACCOUNT_ROUTE } from '../../../constants';
+import { Button } from '../../controls';
+import css from './Header.module.scss';
+import { HeaderLink } from './HeaderLink';
+import { HeaderLogo } from './HeaderLogo';
 
 interface HeaderProps {
 

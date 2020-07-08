@@ -1,10 +1,10 @@
 import React, { Dispatch } from 'react';
+import cx from 'classnames';
+import Scrollbars from 'react-custom-scrollbars';
+import { useTypedSelector } from '../../../../shared/hooks';
+import { IHaveClassname } from '../../../../shared/types';
 import css from './TradesList.module.scss';
 import { TradeItem } from './TradeItem';
-import { useTypedSelector } from '../../../../shared/hooks';
-import cx from 'classnames';
-import { IHaveClassname } from '../../../../shared/types';
-import Scrollbars from 'react-custom-scrollbars';
 
 interface TradesListProps extends IHaveClassname {
     dispatch: Dispatch<any>

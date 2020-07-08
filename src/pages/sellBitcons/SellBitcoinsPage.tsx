@@ -1,9 +1,9 @@
 import React from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
-import { Trades } from './trades/Trades';
 import { Navigation } from '../../shared/components/common/Navigation';
 import { DISPUTES_NAV, MY_TEAM_NAV, OVERVIEW_NAV, SELL_BITCOINS_ROUTE, TRADE_HISTORY_NAV, TRADES_NAV, YOUR_OFFERS_NAV } from '../../shared/constants';
 import { Page, PagePlaceholder } from '../../shared/components';
+import { Trades } from './trades/Trades';
 
 interface SellBitcoinsPageProps {
 

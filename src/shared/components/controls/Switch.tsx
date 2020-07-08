@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Switch.module.scss';
-import { IEditable, IHaveColor } from '../../types';
 import cx from 'classnames';
+import { IEditable, IHaveColor } from '../../types';
+import css from './Switch.module.scss';
 
 interface SwitchProps extends IEditable<boolean>, IHaveColor {
 }

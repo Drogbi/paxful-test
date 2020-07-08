@@ -1,10 +1,10 @@
 import React from 'react';
-import css from './PagePlaceholder.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWrench } from '@fortawesome/free-solid-svg-icons';
-import { Page } from '../layout';
 import { Link } from 'react-router-dom';
+import { Page } from '../layout';
 import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../constants';
+import css from './PagePlaceholder.module.scss';
 
 export const PagePlaceholder: React.FC = () => {
     return (

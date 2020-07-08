@@ -1,15 +1,15 @@
 import React, { useEffect, useLayoutEffect } from 'react';
-import css from './TradeItem.module.scss';
-import { TradeModel, UserModel } from '../../../../shared/types';
 import { Link, useRouteMatch } from 'react-router-dom';
-import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../../../shared/constants';
-import { Avatar } from '../../../../shared/components';
 import cx from 'classnames';
 import { useDispatch } from 'react-redux';
+import { TradeModel, UserModel } from '../../../../shared/types';
+import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../../../shared/constants';
+import { Avatar } from '../../../../shared/components';
 import { readMessages } from '../shared/reducers/tradesSlice';
 import { useBitcoinAmount, useTypedSelector } from '../../../../shared/hooks';
 import { TradeStatus } from '../shared/components';
 import { changeUser } from '../../../../shared/reducers/currentUserSlice';
+import css from './TradeItem.module.scss';
 
 interface TradeItemProps {
     item: TradeModel;
