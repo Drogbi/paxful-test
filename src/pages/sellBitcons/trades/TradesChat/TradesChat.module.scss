@@ -41,9 +41,8 @@
 .messages {
   display: flex;
   flex: 1 1 1px;
-  overflow: scroll;
   flex-direction: column;
-  padding: 24px 0 0 0;
+  padding: 24px 12px 0 12px;
 }
 
 .deleteButton {

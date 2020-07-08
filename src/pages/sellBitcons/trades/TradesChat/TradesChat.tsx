@@ -35,11 +35,11 @@ export const TradesChat: React.FC<TradesChatProps> = ({ className }) => {
                     <Rating theme='secondary' className={ css.rating } { ...user.rating }/>
                 </div>
             </div>
-            <div ref={ messagesRef } className={ css.messages }>
-                <Scrollbars>
+            <Scrollbars>
+                <div ref={ messagesRef } className={ css.messages }>
                     { trade.messages.map((message) => <TradesChatMessage isCurrentUserMessage={ message.author.id === currentUser.id } message={ message }/>) }
-                </Scrollbars>
-            </div>
+                </div>
+            </Scrollbars>
             <TradesChatInput/>
         </div>
     );
