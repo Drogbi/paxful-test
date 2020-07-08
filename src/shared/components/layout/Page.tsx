@@ -1,14 +1,16 @@
 import React from 'react';
 import css from './Page.module.scss';
+import { IHaveClassname } from '../../types';
+import cx from 'classnames';
 
-interface PageProps {
+interface PageProps extends IHaveClassname {
 
 }
 
-export const Page: React.FC<PageProps> = (props) => {
+export const Page: React.FC<PageProps> = ({ className, children }) => {
     return (
-        <div className={ css.page }>
-            { props.children }
+        <div className={ cx(css.page, className) }>
+            { children }
         </div>
     );
 };

@@ -1,11 +1,9 @@
 import React from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { Trades } from './trades/Trades';
-import { Navigation, NavigationItem } from '../../shared/components/common/Navigation';
-import {
-    DISPUTES_NAV, MY_TEAM_NAV, OVERVIEW_NAV, SELL_BITCOINS_ROUTE, TRADE_HISTORY_NAV, TRADES_NAV, YOUR_OFFERS_NAV
-} from '../../shared/constants';
-import { Page } from '../../shared/components';
+import { Navigation } from '../../shared/components/common/Navigation';
+import { DISPUTES_NAV, MY_TEAM_NAV, OVERVIEW_NAV, SELL_BITCOINS_ROUTE, TRADE_HISTORY_NAV, TRADES_NAV, YOUR_OFFERS_NAV } from '../../shared/constants';
+import { Page, PagePlaceholder } from '../../shared/components';
 
 interface SellBitcoinsPageProps {
 
@@ -30,9 +28,9 @@ export const SellBitcoinsPage: React.FC<SellBitcoinsPageProps> = (props) => {
                     <Trades/>
                 </Route>
                 <Route path={ `${ SELL_BITCOINS_ROUTE }/*` }>
-                    WIP
+                    <PagePlaceholder/>
                 </Route>
-                <Redirect to={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }` } />
+                <Redirect to={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }` }/>
             </Switch>
         </Page>
     );

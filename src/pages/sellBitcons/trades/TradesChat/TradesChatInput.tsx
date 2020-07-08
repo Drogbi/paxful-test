@@ -23,9 +23,9 @@ export const TradesChatInput: React.FC<TradesChatInputProps> = (props) => {
         if (isUserChanged.value) {
             dispatch(changeUser(trade.user));
         } else {
-            dispatch(changeUser(myUserProfile))
+            dispatch(changeUser(myUserProfile));
         }
-    }, [isUserChanged.value])
+    }, [isUserChanged.value]);
 
     const clearInput = () => {
         setInputValue('');

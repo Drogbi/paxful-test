@@ -1,5 +1,5 @@
 export enum TradesLayout {
-    SMALL,
+    SMALL = 1,
     MEDIUM,
     LARGE
 }

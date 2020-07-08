@@ -8,7 +8,7 @@ import { IHaveClassname, TradeStatus as TradeStatusType } from '../../../../shar
 import { TradeItemInfoBlock } from './TradeItemInfoBlock';
 import { useBitcoinAmount } from '../../../../shared/hooks';
 import cx from 'classnames';
-import { faCross, faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../../../shared/constants';
 import { useHistory } from 'react-router-dom';
 import { TradeItemInfoDate } from './TradeItemInfoDate';
@@ -43,7 +43,7 @@ export const TradeItemInfo: React.FC<TradeItemInfoProps> = ({ className, dispatc
 
     return (
         <div className={ cx(css.tradeItemInfo, className) }>
-            <Button color='gray' fill='none' icon={ faTimes } className={ css.closeIcon } onClick={ () => propsDispatch({ type: 'toggle-info' }) } />
+            <Button color='gray' fill='none' icon={ faTimes } className={ css.closeIcon } onClick={ () => propsDispatch({ type: 'toggle-info' }) }/>
             <div className={ css.user }>You are trading with <b>{ `${ user.name }` } </b></div>
             <TradeItemInfoDate date={ trade.startDate }/>
             <Button

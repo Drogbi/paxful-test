@@ -16,7 +16,7 @@ export const TradesChatMessage: React.FC<TradesChatMessageProps> = React.memo(({
             <Avatar className={ css.avatar } title={ message.author.name } url={ message.author.avatarUrl }/>
             <div className={ css.contentContainer }>
                 <div className={ css.content }>{ message.content }</div>
-                <div className={ css.time }>{ moment(message.datetime).format("h:mm a") }</div>
+                <div className={ css.time }>{ moment(message.datetime).format('h:mm a') }</div>
             </div>
         </div>
     );

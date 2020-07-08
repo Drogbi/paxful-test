@@ -16,14 +16,12 @@ interface TradesChatProps extends IHaveClassname {
 export const TradesChat: React.FC<TradesChatProps> = ({ className }) => {
     const trade = useCurrentTrade();
     const currentUser = useTypedSelector(state => state.currentUser) as UserModel;
-    const messagesRef = useRef<HTMLDivElement>(null);
+    const scrollBarsRef = useRef<Scrollbars>(null);
 
     const user = trade.user;
 
     useLayoutEffect(() => {
-        messagesRef?.current?.scrollTo({
-            top: messagesRef?.current.scrollHeight,
-        });
+        scrollBarsRef?.current?.scrollToBottom();
     }, [trade.messages.length]);
 
     return (
@@ -36,8 +34,8 @@ export const TradesChat: React.FC<TradesChatProps> = ({ className }) => {
                 </div>
             </div>
             { /*Scrollbars to fix ugly windows scroll */ }
-            <Scrollbars>
-                <div ref={ messagesRef } className={ css.messages }>
+            <Scrollbars ref={ scrollBarsRef }>
+                <div className={ css.messages }>
                     { trade.messages.map((message) => <TradesChatMessage isCurrentUserMessage={ message.author.id === currentUser.id } message={ message }/>) }
                 </div>
             </Scrollbars>

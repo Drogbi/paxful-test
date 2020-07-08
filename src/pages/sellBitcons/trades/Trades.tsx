@@ -10,13 +10,7 @@ import { useScreenSize } from './shared/hooks';
 import { faInfoCircle, faListUl } from '@fortawesome/free-solid-svg-icons';
 import { getDefaultLayoutState, TradesLayoutAction, tradesLayoutReducer, TradesLayoutState } from './shared/reducers/tradesLayoutReducer';
 
-
-interface TradesProps {
-
-}
-
-
-export const Trades: React.FC<TradesProps> = () => {
+export const Trades: React.FC = () => {
     const match = useRouteMatch({ path: `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }`, exact: true });
     const screenSize = useScreenSize();
     const initialState: TradesLayoutState = useMemo(() => getDefaultLayoutState(screenSize, match), []);

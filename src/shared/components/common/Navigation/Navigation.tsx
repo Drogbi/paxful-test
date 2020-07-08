@@ -19,8 +19,8 @@ export const Navigation: React.FC<NavigationProps> = ({ items }) => {
         const path = `${ url }${ to }`;
         return !!matchPath(location.pathname, {
             path
-        })
-    }
+        });
+    };
 
     return (
         <div className={ cx(css.navigation, isNavOpen && css.openedNavigation) }>
@@ -28,7 +28,7 @@ export const Navigation: React.FC<NavigationProps> = ({ items }) => {
                 { items.map((navItem) => {
                     const isActive = isNavItemActive(navItem.to);
                     return <NavigationItem className={ cx(css.navItem, isActive && css.navItemActive) } isActive={ isActive } { ...navItem }/>;
-                })}
+                }) }
             </div>
             <NavigationItem onClick={ () => setIsNavOpen(!isNavOpen) } icon={ faCaretDown } className={ css.dropDownButton }/>
         </div>

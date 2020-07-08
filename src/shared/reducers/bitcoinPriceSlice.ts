@@ -24,6 +24,4 @@ const bitcoinPriceSlice = createSlice<State, CaseReducers>({
 
 export const { fetchBitcoinPrice, fetchBitcoinPriceFulfilled } = bitcoinPriceSlice.actions;
 
-
-
 export default bitcoinPriceSlice.reducer;

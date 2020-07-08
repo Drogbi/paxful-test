@@ -17,6 +17,8 @@
 
   &:focus, &:active {
     outline: none;
+    border: none;
+    box-shadow: none;
   }
 }
 
@@ -27,6 +29,7 @@
   color: map_get($colors, 'green-secondary');
   font-weight: bold;
   font-family: inherit;
+
   &:focus, &:active {
     outline: none;
   }

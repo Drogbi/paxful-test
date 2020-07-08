@@ -13,9 +13,9 @@ export const Rating: React.FC<RatingProps> = ({ likes, dislikes, className, them
     const ratingTheme = theme || 'primary';
     return (
         <div className={ cx(css.rating, className, css[ratingTheme]) }>
-            <span className={ css.likes }>{ `+${likes}` }</span>
+            <span className={ css.likes }>{ `+${ likes }` }</span>
             <span> / </span>
-            <span className={ css.dislikes }>{ `-${dislikes}` }</span>
+            <span className={ css.dislikes }>{ `-${ dislikes }` }</span>
         </div>
     );
 };

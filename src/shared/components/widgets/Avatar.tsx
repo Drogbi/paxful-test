@@ -1,11 +1,11 @@
 import React from 'react';
 import css from './Avatar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { IHaveClassname } from '../../types';
 import cx from 'classnames';
 
-interface AvatarProps extends IHaveClassname{
+interface AvatarProps extends IHaveClassname {
     url?: string;
     size?: number;
     title?: string;

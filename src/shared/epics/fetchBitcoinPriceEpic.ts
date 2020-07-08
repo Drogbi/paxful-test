@@ -8,7 +8,6 @@ type FetchedPrice = { bpi: Record<Currency, { code: string, rate_float: number }
 
 export const fetchBitcoinPriceEpic: Epic = (action$) => action$.pipe(
     ofType(fetchBitcoinPrice.type),
-    tap(a => console.log(a)),
     mergeMap((action: { payload: Currency, type: string }) =>
         ajax.getJSON<any>(`https://api.coindesk.com/v1/bpi/currentprice/${ action.payload }.json`).pipe(
             map((response: FetchedPrice) => response.bpi[action.payload]),

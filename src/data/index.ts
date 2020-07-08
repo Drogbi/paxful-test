@@ -1,4 +1,5 @@
-import { Currency, TradeModel, TradeStatus, TradeType, UserModel } from './shared/types/data';
+
+import { Currency, TradeModel, TradeStatus, TradeType, UserModel } from '../shared/types';
 
 interface InitialDataModel {
     trades: TradeModel[];
@@ -32,7 +33,7 @@ export const initialData: InitialDataModel = {
         },
         {
             id: 2,
-            product: { id: 1, name: 'App Store Gift Card' },
+            product: { id: 2, name: 'App Store Gift Card' },
             price: { value: 100, currency: Currency.USD },
             isNewMessagesAvailable: true,
             messages: [
@@ -80,7 +81,70 @@ export const initialData: InitialDataModel = {
                 rating: { likes: 34, dislikes: 8 }
             },
             type: TradeType.BUYING
-        }
+        },
+        {
+            id: 3,
+            product: { id: 12, name: 'iPhone 12' },
+            price: { value: 2000, currency: Currency.USD },
+            isNewMessagesAvailable: true,
+            messages: [
+                { author: { id: 10, name: 'Daniel', avatarUrl: 'https://i.pravatar.cc/150?img=11' }, content: 'Halo!', datetime: new Date(1,1,23,11).toISOString() },
+                { author: { id: 2, name: 'Denis', avatarUrl: 'https://i.pravatar.cc/150?img=3' }, content: 'Hello', datetime: new Date(1,1,1,2).toISOString() }
+            ],
+            status: TradeStatus.NOT_PAID,
+            tradeHash: '#sadfa1',
+            startDate: new Date().toISOString(),
+            user: {
+                id: 10,
+                name: 'Daniel',
+                avatarUrl: 'https://i.pravatar.cc/150?img=11',
+                tradesCount: 1002,
+                rating: { likes: 1, dislikes: 800 }
+            },
+            type: TradeType.BUYING,
+        },
+        {
+            id: 4,
+            product: { id: 3, name: 'SPA Certificate' },
+            price: { value: 200, currency: Currency.USD },
+            isNewMessagesAvailable: true,
+            messages: [
+                { author: { id: 5, name: 'Ellie', avatarUrl: 'https://i.pravatar.cc/150?img=20' }, content: 'Guten morgen!', datetime: new Date(1,1,1,11, 21).toISOString() },
+                { author: { id: 2, name: 'Denis', avatarUrl: 'https://i.pravatar.cc/150?img=3' }, content: 'Hello', datetime: new Date(1,1,1,2).toISOString() }
+            ],
+            status: TradeStatus.PAID,
+            tradeHash: '#kljcx1',
+            startDate: new Date().toISOString(),
+            user: {
+                id: 5,
+                name: 'Ellie',
+                avatarUrl: 'https://i.pravatar.cc/150?img=20',
+                tradesCount: 2314,
+                rating: { likes: 2001, dislikes: 0 }
+            },
+            type: TradeType.BUYING,
+        },
+        {
+            id: 5,
+            product: { id: 3, name: 'Playstation Gift Card' },
+            price: { value: 20, currency: Currency.USD },
+            isNewMessagesAvailable: true,
+            messages: [
+                { author: { id: 3, name: 'Rasmus', avatarUrl: 'https://i.pravatar.cc/150?img=5' }, content: 'Tere!', datetime: new Date(1,1,1,23, 32).toISOString() },
+                { author: { id: 2, name: 'Denis', avatarUrl: 'https://i.pravatar.cc/150?img=3' }, content: 'Hello', datetime: new Date(1,1,1,2).toISOString() }
+            ],
+            status: TradeStatus.NOT_PAID,
+            tradeHash: '#12312F',
+            startDate: new Date().toISOString(),
+            user: {
+                id: 3,
+                name: 'Rasmus',
+                avatarUrl: 'https://i.pravatar.cc/150?img=5',
+                tradesCount: 51,
+                rating: { likes: 2, dislikes: 99 }
+            },
+            type: TradeType.BUYING,
+        },
     ],
     currentUser: {
         id: 2,

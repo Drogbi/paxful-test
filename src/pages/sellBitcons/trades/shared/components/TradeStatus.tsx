@@ -8,8 +8,8 @@ interface TradeStatusProps extends IHaveClassname {
 }
 
 export const TradeStatus: React.FC<TradeStatusProps> = ({ status, className }) => {
-    const isPaid  = status === TradeStatusType.PAID;
+    const isPaid = status === TradeStatusType.PAID;
     return (
-        <div className={ cx(css.tradeStatus, isPaid && css.paid, className)  }>{ status }</div>
+        <div className={ cx(css.tradeStatus, isPaid && css.paid, className) }>{ status }</div>
     );
 };

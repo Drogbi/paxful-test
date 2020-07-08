@@ -11,12 +11,11 @@ const currentUserSlice = createSlice<State, CaseReducers>({
     initialState: null,
     reducers: {
         changeUser(state, action) {
-            console.log(action.payload);
             return action.payload;
         },
     }
-})
+});
 
-export const { changeUser } = currentUserSlice.actions
+export const { changeUser } = currentUserSlice.actions;
 
-export default currentUserSlice.reducer
+export default currentUserSlice.reducer;

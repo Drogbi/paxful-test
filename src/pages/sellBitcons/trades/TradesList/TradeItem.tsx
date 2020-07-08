@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import css from './TradeItem.module.scss';
-import { Currency, TradeModel, UserModel } from '../../../../shared/types';
+import { TradeModel, UserModel } from '../../../../shared/types';
 import { Link, useRouteMatch } from 'react-router-dom';
 import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../../../shared/constants';
 import { Avatar } from '../../../../shared/components';
 import cx from 'classnames';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { readMessages } from '../shared/reducers/tradesSlice';
 import { useBitcoinAmount, useTypedSelector } from '../../../../shared/hooks';
 import { TradeStatus } from '../shared/components';
