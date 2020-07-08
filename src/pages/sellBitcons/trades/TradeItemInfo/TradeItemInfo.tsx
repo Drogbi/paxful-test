@@ -54,7 +54,7 @@ export const TradeItemInfo: React.FC<TradeItemInfoProps> = ({ className, dispatc
             />
             <div className={ css.info }>
                 <TradeItemInfoBlock>
-                    <Avatar className={ css.avatar } url={ user.avatarUrl }/>
+                    <Avatar border className={ css.avatar } url={ user.avatarUrl }/>
                     <Rating className={ css.rating } { ...user.rating }/>
                 </TradeItemInfoBlock>
                 <TradeItemInfoBlock label='# OF TRADES'>{ user.tradesCount }</TradeItemInfoBlock>

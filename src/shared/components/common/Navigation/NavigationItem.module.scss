@@ -14,9 +14,18 @@
   }
   &:hover {
     cursor: pointer;
+    background-color: #f5fbff;
   }
 }
 
 .active {
   background-color: #f5fbff;
+}
+
+@media (max-width: 1270px) {
+  .navigationItem {
+    overflow: initial;
+    border-bottom: 1px solid #eaeaea;
+    line-height: 22px;
+  }
 }

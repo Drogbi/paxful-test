@@ -1,4 +1,4 @@
-.chat {
+.tradesChat {
   flex: 2 1 0;
   display: flex;
   flex-direction: column;
@@ -48,6 +48,12 @@
 .deleteButton {
   position: absolute;
   left: 60px;
+}
+
+@media (max-width: 470px) {
+  .tradesChat {
+    padding: 30px 0 0 0;
+  }
 }
 
 

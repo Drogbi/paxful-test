@@ -1,4 +1,4 @@
-.message {
+.tradesChatMessage {
   display: flex;
   margin: 12px 0;
 }
@@ -80,4 +80,10 @@
     }
   }
 ;
+}
+
+@media (max-width: 470px) {
+  .tradesChatMessage {
+    margin: 6px 0;
+  }
 }

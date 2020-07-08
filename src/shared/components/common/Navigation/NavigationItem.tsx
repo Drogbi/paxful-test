@@ -26,7 +26,7 @@ export const NavigationItem: React.FC<NavigationItemProps> = ({ to, label, isAct
                 </div>
             )
             : (
-                <Link className={ cx(css.navigationItem, isActive && css.active, className) } to={ path }>
+                <Link to={ path } onClick={ onClick } className={ cx(css.navigationItem, isActive && css.active, className) } >
                     { label }
                     { icon && <FontAwesomeIcon icon={ icon }/> }
                 </Link>

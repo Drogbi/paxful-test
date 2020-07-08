@@ -47,11 +47,11 @@
 
 .active {
   background-color: #F5F7FA;
-  &.tradeItem {
-    transform: translate3d(15px, 0, 0);
-    border-right: 1px solid #dedede;
-    border-radius: 3px;
-    transition: transform 150ms ease-out;
+  .type {
+    color: #6A809E;
+  }
+  .price, .bitcoinPrice {
+    color: black;
   }
 }
 

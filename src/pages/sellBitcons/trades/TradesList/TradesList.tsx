@@ -19,7 +19,6 @@ export const TradesList: React.FC<TradesListProps> = ({ className, dispatch }) =
                     dispatch({ type: 'toggle-list' });
                 } } item={ item }/>) }
             </Scrollbars>
-
         </div>
     );
 };

@@ -7,6 +7,11 @@ export type TradesLayoutAction =
     | { type: 'toggle-info', screenSize: TradesLayout }
     | { type: 'handle-state-change', state: TradesLayoutState }
 
+
+/* This solution may seems massive but I really have tried different ways to handle 3 columns layout in different ways.
+All my tries had been leading to the unsupportable handlers in different components or strange media queries. So I think this is great solution for this kind of layout.
+The idea is handle layout changes in one place instead of handle layout change in different components.
+*/
 export const tradesLayoutReducer: React.Reducer<TradesLayoutState, TradesLayoutAction> = (state, action) => {
     switch (action.type) {
         case 'toggle-list':

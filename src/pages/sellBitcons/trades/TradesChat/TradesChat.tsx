@@ -25,7 +25,7 @@ export const TradesChat: React.FC<TradesChatProps> = ({ className }) => {
     }, [trade.messages.length]);
 
     return (
-        <div className={ cx(css.chat, className) }>
+        <div className={ cx(css.tradesChat, className) }>
             <div className={ css.header }>
                 <div className={ css.product }>{ trade.product.name }</div>
                 <div className={ css.userContainer }>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import css from './Navigation.module.scss';
 import { NavigationItem } from './NavigationItem';
 import { matchPath, useLocation, useRouteMatch } from 'react-router-dom';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
 
 interface NavigationProps {
@@ -22,15 +22,25 @@ export const Navigation: React.FC<NavigationProps> = ({ items }) => {
         });
     };
 
+    const handleNavItemClick = (e: React.MouseEvent) => {
+        if ((e.target as any).tagName === 'A') {
+            setIsNavOpen(false);
+        }
+    }
+
+    const onDropdownClick = () => {
+        setIsNavOpen(!isNavOpen);
+    }
+
     return (
         <div className={ cx(css.navigation, isNavOpen && css.openedNavigation) }>
-            <div className={ css.navigationItems }>
+            <div onClick={ handleNavItemClick } className={ css.navigationItems }>
                 { items.map((navItem) => {
                     const isActive = isNavItemActive(navItem.to);
                     return <NavigationItem className={ cx(css.navItem, isActive && css.navItemActive) } isActive={ isActive } { ...navItem }/>;
                 }) }
             </div>
-            <NavigationItem onClick={ () => setIsNavOpen(!isNavOpen) } icon={ faCaretDown } className={ css.dropDownButton }/>
+            <NavigationItem onClick={ onDropdownClick } icon={ isNavOpen ? faCaretUp : faCaretDown } className={ css.dropDownButton }/>
         </div>
     );
 };

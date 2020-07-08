@@ -27,11 +27,13 @@ export const Trades: React.FC = () => {
 
 
     const dispatchWithScreenSize = (action: Exclude<TradesLayoutAction, { type: 'handle-state-change', state: TradesLayoutState }>) => dispatch({ screenSize, ...action });
+    const isInfoButtonVisible = !isInfoOpen && !match && (!isListOpen || isChatOpen);
+    const isListButtonVisible = !isListOpen && !match;
 
     return (
         <div className={ css.trades }>
-            { !isListOpen && !match && <Button color='gray' fill='none' icon={ faListUl } className={ css.tradesListOpenButton } onClick={ () => dispatch({ type: 'toggle-list', screenSize }) }/> }
-            { !isInfoOpen && !match && <Button color='gray' fill='none' icon={ faInfoCircle } className={ css.tradesInfoOpenButton } onClick={ () => dispatch({ type: 'toggle-info', screenSize }) }/> }
+            { isInfoButtonVisible && <Button color='gray' fill='none' icon={ faInfoCircle } className={ css.tradesInfoOpenButton } onClick={ () => dispatch({ type: 'toggle-info', screenSize }) }/> }
+            { isListButtonVisible && <Button color='gray' fill='none' icon={ faListUl } className={ css.tradesListOpenButton } onClick={ () => dispatch({ type: 'toggle-list', screenSize }) }/> }
             { (isListOpen) && <TradesList dispatch={ dispatchWithScreenSize } className={ css.tradesList }/> }
             <Switch>
                 <Route path={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/:id` }>

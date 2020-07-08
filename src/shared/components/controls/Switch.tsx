@@ -4,7 +4,6 @@ import { IEditable, IHaveColor } from '../../types';
 import cx from 'classnames';
 
 interface SwitchProps extends IEditable<boolean>, IHaveColor {
-
 }
 
 export const Switch: React.FC<SwitchProps> = ({ value, onChange, color }) => {

@@ -3,8 +3,8 @@ export interface IEditable<TValue> {
     onChange: (value: TValue) => void;
 }
 
-export interface IClickable {
-    onClick?: () => void;
+export interface IClickable<TEvent = any> {
+    onClick?: (e?: TEvent) => void;
 }
 
 export interface IHaveClassname {

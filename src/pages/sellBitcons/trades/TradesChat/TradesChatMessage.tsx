@@ -12,7 +12,7 @@ interface TradesChatMessageProps {
 
 export const TradesChatMessage: React.FC<TradesChatMessageProps> = React.memo(({ message, isCurrentUserMessage }) => {
     return (
-        <div className={ cx(css.message, isCurrentUserMessage ? css.currentUser : css.tradeUser) }>
+        <div className={ cx(css.tradesChatMessage, isCurrentUserMessage ? css.currentUser : css.tradeUser) }>
             <Avatar className={ css.avatar } title={ message.author.name } url={ message.author.avatarUrl }/>
             <div className={ css.contentContainer }>
                 <div className={ css.content }>{ message.content }</div>

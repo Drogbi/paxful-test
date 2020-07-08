@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import css from './TradeItem.module.scss';
 import { TradeModel, UserModel } from '../../../../shared/types';
 import { Link, useRouteMatch } from 'react-router-dom';
@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { readMessages } from '../shared/reducers/tradesSlice';
 import { useBitcoinAmount, useTypedSelector } from '../../../../shared/hooks';
 import { TradeStatus } from '../shared/components';
+import { changeUser } from '../../../../shared/reducers/currentUserSlice';
 
 interface TradeItemProps {
     item: TradeModel;
@@ -24,15 +25,21 @@ export const TradeItem: React.FC<TradeItemProps> = ({ item, onClick }) => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        if (match && currentUser.id === myUserProfile.id) {
-            dispatch(readMessages(item));
+    useLayoutEffect(() => {
+        if (match) {
+            if (currentUser.id === myUserProfile.id) {
+                dispatch(readMessages(item));
+            }
+            if (currentUser.id !== myUserProfile.id) {
+                dispatch(changeUser(item.user));
+            }
         }
     }, [match]);
 
+    const isActive = !!match;
 
     return (
-        <Link onClick={ onClick } className={ cx(css.tradeItem, match && css.active) } to={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/${ item.id }` }>
+        <Link onClick={ onClick } className={ cx(css.tradeItem, isActive && css.active) } to={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/${ item.id }` }>
             <div title={ item.isNewMessagesAvailable ? 'New messages available' : '' } className={ cx(css.notificationIcon, item.isNewMessagesAvailable && css.notificationIconActive) }/>
             <div className={ css.info }>
                 <div className={ css.type }>
