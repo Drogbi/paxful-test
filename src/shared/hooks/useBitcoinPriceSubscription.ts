@@ -7,7 +7,7 @@ import { Currency } from '../types';
 export const useBitcoinSubscription = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-        const observable = timer(0, 100000);
+        const observable = timer(0, 60 * 1000);
         const subscription = observable.subscribe(() => dispatch(fetchBitcoinPrice(Currency.USD)));
         return () => subscription.unsubscribe();
     }, [])

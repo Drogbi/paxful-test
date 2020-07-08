@@ -1,5 +1,5 @@
 import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { MessageModel, TradeModel, TradeStatus } from '../../../../../shared/types/data';
+import { MessageModel, TradeModel, TradeStatus } from '../../../../../shared/types';
 
 type State = TradeModel[];
 type CaseReducers = {
@@ -18,24 +18,24 @@ const tradesSlice = createSlice<State, CaseReducers>({
         deleteTrade(state, action) {
             return state.filter((trade) => trade.id !== action.payload);
         },
-        addTradeMessage: (state, action) => {
-            const trade = state.find((trade) => action.payload.trade.id === trade.id) as TradeModel;
-            const message = action.payload.message;
+        addTradeMessage: (state, { payload }) => {
+            const trade = state.find((trade) => payload.trade.id === trade.id) as TradeModel;
+            const message = payload.message;
             /* I know it looks like a bad practice to mutate state, but Redux Tookit uses
                Immer Library to handle tree mutation and return new state */
             trade.messages.push(message);
             trade.isNewMessagesAvailable = true;
         },
-        readMessages: (state, action) => {
-            const trade = state.find((trade) => action.payload.id === trade.id) as TradeModel;
+        readMessages: (state, { payload }) => {
+            const trade = state.find((trade) => payload.id === trade.id) as TradeModel;
             trade.isNewMessagesAvailable = false;
         },
-        releaseTrade: (state, action) => {
-            const trade = state.find((trade) => action.payload.id === trade.id) as TradeModel;
+        releaseTrade: (state, { payload }) => {
+            const trade = state.find((trade) => payload.id === trade.id) as TradeModel;
             trade.status = TradeStatus.PAID;
         },
-        reopenTrade: (state, action) => {
-            const trade = state.find((trade) => action.payload.id === trade.id) as TradeModel;
+        reopenTrade: (state, { payload }) => {
+            const trade = state.find((trade) => payload.id === trade.id) as TradeModel;
             trade.status = TradeStatus.NOT_PAID;
         }
     }

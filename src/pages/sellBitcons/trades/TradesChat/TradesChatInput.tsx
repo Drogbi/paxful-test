@@ -17,9 +17,7 @@ export const TradesChatInput: React.FC<TradesChatInputProps> = (props) => {
     const currentUser = useTypedSelector<UserModel>((state) => state.currentUser as UserModel);
     const myUserProfile = useTypedSelector((state) => state.myUserProfile as UserModel);
     const trade = useCurrentTrade();
-    console.log(trade);
     const inputValue = useTypedSelector((state) => state.tradesChat[trade.id])
-    console.log(inputValue);
     const dispatch = useDispatch();
 
     const clearInput = () => {

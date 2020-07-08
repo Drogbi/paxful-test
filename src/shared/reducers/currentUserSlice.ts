@@ -10,8 +10,8 @@ const currentUserSlice = createSlice<State, CaseReducers>({
     name: 'currentUser',
     initialState: null,
     reducers: {
-        changeUser(state, action) {
-            return action.payload;
+        changeUser(state, { payload }) {
+            return payload;
         },
     }
 });
