@@ -1,0 +1,11 @@
+@import "src/shared/styles/colors.scss";
+
+.tradeStatus {
+  color: #A4A4A5;
+  font-weight: 600;
+}
+
+.paid {
+  color: map-get($colors, 'green-secondary');
+}
+

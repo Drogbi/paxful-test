@@ -8,7 +8,7 @@ import { TradeItemInfo } from './TradeItemInfo/TradeItemInfo';
 import { Button } from '../../../shared/components/controls';
 import { useMedia } from 'react-use';
 import cx from 'classnames';
-import { useScreenSize } from './hooks';
+import { useScreenSize } from './shared/hooks';
 import { faInfoCircle, faListUl } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -17,6 +17,7 @@ interface TradesProps {
 }
 
 const tradesScreenReducer = (state: any, action: any) => {
+    console.log(state, action);
     switch (action.type) {
         case 'toggle-list':
             if (action.screenSize === 'small') {
@@ -36,14 +37,14 @@ const tradesScreenReducer = (state: any, action: any) => {
             return [true, true, true];
         case 'toggle-info': {
             if (action.screenSize === 'small') {
-                if (state[3]) {
+                if (state[2]) {
                     return [false, true, false];
                 } else {
                     return [false, false, true];
                 }
             }
             if (action.screenSize === 'medium') {
-                if (state[3]) {
+                if (state[2]) {
                     return [true, false, false];
                 } else {
                     return [false, true, true];
@@ -98,7 +99,7 @@ export const Trades: React.FC<TradesProps> = (props) => {
             <Switch>
                 <Route path={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/:id` }>
                     { isChatOpen && <TradesChat className={ css.tradesChat }/> }
-                    { isInfoOpen && <TradeItemInfo className={ css.tradeItemInfo }/> }
+                    { isInfoOpen && <TradeItemInfo dispatch={ dispatchWithScreenSize } className={ css.tradeItemInfo }/> }
                 </Route>
             </Switch>
         </div>

@@ -3,7 +3,6 @@ export interface UserModel {
     name: string;
     avatarUrl?: string;
     tradesCount: number;
-    amountBalance: CurrencyAmountModel;
     rating: { likes: number, dislikes: number }
 }
 

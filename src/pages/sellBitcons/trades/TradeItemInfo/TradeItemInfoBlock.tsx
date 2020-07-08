@@ -9,7 +9,7 @@ export const TradeItemInfoBlock: React.FC<TradeItemInfoBlockProps> = ({ label, c
     return (
         <div className={ css.tradeItemInfoBlock }>
             { label && <div className={ css.label }>{ label }</div> }
-            { children }
+            <div className={ css.content }>{ children }</div>
         </div>
     );
 };

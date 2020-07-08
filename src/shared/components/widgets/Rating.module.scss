@@ -1,0 +1,23 @@
+@import "src/shared/styles/colors.scss";
+
+.rating {
+  font-weight: 600;
+}
+
+.primary {
+  .likes {
+    color: map-get($colors, "green")
+  }
+  .dislikes  {
+    color: map-get($colors, "red")
+  }
+}
+
+.secondary {
+  .likes {
+    color: map-get($colors, "green-secondary")
+  }
+  .dislikes  {
+    color: map-get($colors, "red-secondary")
+  }
+}

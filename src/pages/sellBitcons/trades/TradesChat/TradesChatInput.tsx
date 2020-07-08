@@ -6,7 +6,7 @@ import { useTypedSelector, useValue } from '../../../../shared/hooks';
 import { UserModel } from '../../../../shared/types';
 import { Avatar, Switch } from '../../../../shared/components';
 import { changeUser } from '../../../../shared/reducers/currentUserSlice';
-import { useCurrentTrade } from '../hooks';
+import { useCurrentTrade } from '../shared/hooks';
 
 interface TradesChatInputProps {
 }
@@ -42,7 +42,7 @@ export const TradesChatInput: React.FC<TradesChatInputProps> = (props) => {
         if (inputValue) {
             dispatch(addTradeMessage({
                 trade,
-                message: { author: { id, name, avatarUrl }, content: inputValue, datetime: new Date().toDateString() }
+                message: { author: { id, name, avatarUrl }, content: inputValue, datetime: new Date().toISOString() }
             }));
             clearInput();
         }

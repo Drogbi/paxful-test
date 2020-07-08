@@ -1,3 +1,6 @@
+@import "src/shared/styles/mixins.scss";
+@import "src/shared/styles/colors.scss";
+
 .switch {
   position: relative;
   min-width: 60px;
@@ -11,7 +14,7 @@
 }
 
 .slider {
-  @import "src/shared/styles/colors.scss";
+  @include colors($colors);
   position: absolute;
   cursor: pointer;
   top: 0;

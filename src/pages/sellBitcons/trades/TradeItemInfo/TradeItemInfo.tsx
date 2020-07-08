@@ -1,27 +1,28 @@
-import React, { useState } from 'react';
+import React, { Dispatch } from 'react';
 import css from './TradeItemInfo.module.scss';
-import { Avatar, Button } from '../../../../shared/components';
-import { useCurrentTrade } from '../hooks';
+import { Avatar, Button, Rating } from '../../../../shared/components';
+import { useCurrentTrade } from '../shared/hooks';
 import { useDispatch } from 'react-redux';
 import { deleteTrade, releaseTrade, reopenTrade } from '../tradesSlice';
-import { IHaveClassname, TradeStatus } from '../../../../shared/types';
+import { IHaveClassname, TradeStatus as TradeStatusType } from '../../../../shared/types';
 import { TradeItemInfoBlock } from './TradeItemInfoBlock';
 import { useBitcoinAmount } from '../../../../shared/hooks';
 import cx from 'classnames';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCross, faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { SELL_BITCOINS_ROUTE, TRADES_NAV } from '../../../../shared/constants';
 import { useHistory } from 'react-router-dom';
+import { TradeItemInfoDate } from './TradeItemInfoDate';
+import { TradeStatus } from '../shared/components';
 
 interface TradeItemInfoProps extends IHaveClassname {
-    onOpen?: () => void;
-    isOpen?: boolean;
+    dispatch: Dispatch<any>;
 }
 
-export const TradeItemInfo: React.FC<TradeItemInfoProps> = ({ isOpen, className }) => {
+export const TradeItemInfo: React.FC<TradeItemInfoProps> = ({ className, dispatch: propsDispatch }) => {
     const trade = useCurrentTrade();
     const user = trade.user;
     const dispatch = useDispatch();
-    const bitcoinAmount = useBitcoinAmount(trade.price)
+    const bitcoinAmount = useBitcoinAmount(trade.price);
     const history = useHistory();
 
     const onRelease = () => {
@@ -38,12 +39,13 @@ export const TradeItemInfo: React.FC<TradeItemInfoProps> = ({ isOpen, className 
     };
 
 
-    const isPaid = trade.status === TradeStatus.PAID;
+    const isPaid = trade.status === TradeStatusType.PAID;
 
     return (
-        <div className={ cx(css.tradeItemInfo, isOpen && css.isOpen, className) }>
+        <div className={ cx(css.tradeItemInfo, className) }>
+            <Button color='gray' fill='none' icon={ faTimes } className={ css.closeIcon } onClick={ () => propsDispatch({ type: 'toggle-info' }) } />
             <div className={ css.user }>You are trading with <b>{ `${ user.name }` } </b></div>
-            <div className={ css.startDate }>{ trade.startDate }</div>
+            <TradeItemInfoDate date={ trade.startDate }/>
             <Button
                 shadow
                 label={ isPaid ? 'Reopen trade' : 'Release bitcoins' }
@@ -52,11 +54,11 @@ export const TradeItemInfo: React.FC<TradeItemInfoProps> = ({ isOpen, className 
             />
             <div className={ css.info }>
                 <TradeItemInfoBlock>
-                    <Avatar url={ user.avatarUrl }/>
-                    <div>{ `+${ user.rating.likes } / -${ user.rating.dislikes }` }</div>
+                    <Avatar className={ css.avatar } url={ user.avatarUrl }/>
+                    <Rating className={ css.rating } { ...user.rating }/>
                 </TradeItemInfoBlock>
                 <TradeItemInfoBlock label='# OF TRADES'>{ user.tradesCount }</TradeItemInfoBlock>
-                <TradeItemInfoBlock label='TRADE STATUS'>{ trade.status }</TradeItemInfoBlock>
+                <TradeItemInfoBlock label='TRADE STATUS'><TradeStatus status={ trade.status }/></TradeItemInfoBlock>
                 <TradeItemInfoBlock label='TRADE HASH'>{ trade.tradeHash }</TradeItemInfoBlock>
                 <TradeItemInfoBlock label={ `AMOUNT ${ trade.price.currency }` }>{ trade.price.value }</TradeItemInfoBlock>
                 <TradeItemInfoBlock label='AMOUNT BTC'>{ bitcoinAmount.value }</TradeItemInfoBlock>

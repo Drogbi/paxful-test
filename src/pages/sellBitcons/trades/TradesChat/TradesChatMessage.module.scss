@@ -5,19 +5,29 @@
 
 .tradeUser {
   .content {
+    background-color: #5C7394;
+    color: white;
+  }
+  .contentContainer {
     order: 1;
     margin-left: 58px;
     margin-right: 12px;
-    background-color: #5C7394;
-    color: white;
   }
   .avatar {
     order: 2;
   }
+  .time {
+    margin-left: auto;
+  }
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .currentUser {
-  .content {
+  .contentContainer {
     margin-right: 58px;
     margin-left: 12px;
   }
@@ -26,7 +36,17 @@
 .content {
   background-color: white;
   border: 1px solid #dedede;
-  width: 100%;
   border-radius: 3px;
   padding: 12px;
+}
+
+.contentContainer {
+  width: 100%;
+}
+
+.time {
+  font-size: 12px;
+  color: #9297a0;
+  font-weight: 600;
+  margin-top: 6px;
 }

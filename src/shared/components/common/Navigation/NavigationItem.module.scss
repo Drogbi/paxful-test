@@ -2,10 +2,13 @@
   border-right: 1px solid #eaeaea;
   border-left: 1px solid #eaeaea;
   padding: 27px 42px;
-  color: black;
+  color: #434343;
   font-size: 20px;
   background-color: white;
   text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   &:not(:first-child) {
     margin-left: -1px;
   }

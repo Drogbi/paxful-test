@@ -9,8 +9,8 @@
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
+  place-items: center;
   border-bottom: 1px solid #dedede;
   padding-bottom: 24px;
   pointer-events: none;
@@ -19,19 +19,31 @@
 .product {
   font-size: 20px;
   margin-bottom: 6px;
+  font-weight: 600;
+  color: #434343;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .user {
   font-size: 18px;
+  color: #90949D;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.userContainer {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 auto;
 }
 
 .messages {
   display: flex;
-  // browser or CRA webpack ignore 0px that's why I use 1px here instead of 0
   flex: 1 1 1px;
   overflow: scroll;
-  padding-top: 24px;
   flex-direction: column;
+  padding: 24px 12px 0 12px;
 }
 
 .deleteButton {

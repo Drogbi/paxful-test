@@ -7,6 +7,7 @@
   position: relative;
   box-shadow: -2px 5px 5px 0 #dedede;
   background-color: white;
+  font-family: 'Balsamiq Sans', cursive;
 }
 
 .info {
@@ -20,23 +21,31 @@
   border-bottom: 1px solid #dedede;
 }
 
-.startDate {
-  margin-top: 6px;
-  margin-bottom: 20px;
+.user {
+  font-size: 24px;
+  color: #434343;
+  padding: 0 20px;
+}
+
+.avatar {
+  margin-top: -12px;
+}
+
+.rating {
+  margin-top: 12px;
+}
+
+.closeIcon {
+  display: none;
+}
+
+@media (max-width: 1270px) {
+  .closeIcon {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
 }
 
 
-//@media (max-width: 1270px) {
-//  .tradeItemInfo {
-//    display: none;
-//  }
-//  .isOpen {
-//    display: flex;
-//  }
-//}
-//
-//@media (max-width: 700px) {
-//  .isOpen {
-//
-//  }
-//}

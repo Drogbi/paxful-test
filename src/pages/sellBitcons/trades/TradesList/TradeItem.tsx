@@ -8,6 +8,7 @@ import cx from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { readMessages } from '../tradesSlice';
 import { useBitcoinAmount, useTypedSelector } from '../../../../shared/hooks';
+import { TradeStatus } from '../shared/components';
 
 interface TradeItemProps {
     item: TradeModel;
@@ -30,7 +31,6 @@ export const TradeItem: React.FC<TradeItemProps> = ({ item, onClick }) => {
     }, [match]);
 
 
-
     return (
         <Link onClick={ onClick } className={ cx(css.tradeItem, match && css.active) } to={ `${ SELL_BITCOINS_ROUTE }${ TRADES_NAV }/${ item.id }` }>
             <div title={ item.isNewMessagesAvailable ? 'New messages available' : '' } className={ cx(css.notificationIcon, item.isNewMessagesAvailable && css.notificationIconActive) }/>
@@ -50,7 +50,7 @@ export const TradeItem: React.FC<TradeItemProps> = ({ item, onClick }) => {
             </div>
             <div className={ css.status }>
                 <Avatar url={ item.user.avatarUrl }/>
-                <div className={ css.itemStatus }>{ item.status }</div>
+                <TradeStatus status={ item.status } className={ css.itemStatus }/>
             </div>
         </Link>
     );
