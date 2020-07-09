@@ -141,7 +141,7 @@ export const initialData: InitialDataModel = {
                 name: 'Rasmus',
                 avatarUrl: 'https://i.pravatar.cc/150?img=5',
                 tradesCount: 51,
-                rating: { likes: 2, dislikes: 99 }
+                rating: { likes: 99, dislikes: 0 }
             },
             type: TradeType.BUYING,
         },

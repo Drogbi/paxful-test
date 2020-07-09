@@ -23,7 +23,7 @@ Features:
 Requirements: 
 - [x] SPA(React, Typescript)
 - [x] Nice design
-- [x] Responsive and usability
+- [x] Responsive and usability (min-width: 320px a.k.a iPhone SE)
 - [x] Trade list
 - [x] Chat
 - [x] Messages notification
