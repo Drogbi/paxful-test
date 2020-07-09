@@ -1,4 +1,8 @@
 .navigationItem {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
   border-right: 1px solid #eaeaea;
   border-left: 1px solid #eaeaea;
   padding: 27px 42px;

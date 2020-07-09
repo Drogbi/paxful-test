@@ -50,11 +50,11 @@
     }
   }
   .navItemActive {
-    display: block;
+    display: flex;
     flex: 1 1 auto;
   }
   .dropDownButton {
-    display: block;
+    display: flex;
     position: relative;
   }
 }
@@ -62,5 +62,11 @@
 @media (max-width: 600px) {
   .navigation {
     padding: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .navigation {
+    height: 60px;
   }
 }
