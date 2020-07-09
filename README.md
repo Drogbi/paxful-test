@@ -35,4 +35,6 @@ Requirements:
 - [x] Hardcoded data
 - [x] Real-time data pulling
 
+Note: 
+* Delete button moved from top to right info panel because of design issues on mobile layout
 
