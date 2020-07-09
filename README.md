@@ -37,4 +37,5 @@ Requirements:
 
 Note: 
 * Delete button moved from top to right info panel because of design issues on mobile layout
+* I haven't optimized performance with useMemo, useCallback and React.memo a lot because it works fine
 
