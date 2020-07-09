@@ -40,7 +40,7 @@ export const tradesLayoutReducer: React.Reducer<TradesLayoutState, TradesLayoutA
             }
             if (action.screenSize === TradesLayout.MEDIUM) {
                 if (state[2]) {
-                    return [true, false, false];
+                    return [true, true, false];
                 } else {
                     return [false, true, true];
                 }
