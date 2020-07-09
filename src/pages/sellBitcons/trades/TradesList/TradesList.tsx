@@ -15,9 +15,7 @@ export const TradesList: React.FC<TradesListProps> = ({ className, dispatch }) =
     return (
         <div className={ cx(css.tradesList, className) }>
             <Scrollbars>
-                { trades.map((item) => <TradeItem onClick={ () => {
-                    dispatch({ type: 'toggle-list' });
-                } } item={ item }/>) }
+                { trades.map((item) => <TradeItem onClick={ () => { dispatch({ type: 'toggle-list' }) } } item={ item }/>) }
             </Scrollbars>
         </div>
     );

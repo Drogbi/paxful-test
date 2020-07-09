@@ -39,7 +39,6 @@ export const TradesChatInput: React.FC<TradesChatInputProps> = (props) => {
             }));
             clearInput();
         }
-
     };
 
     const onInputChange = (e: React.ChangeEvent<{ value: string }>) => {

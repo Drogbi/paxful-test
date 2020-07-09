@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import cx from 'classnames';
 import { useDispatch } from 'react-redux';
