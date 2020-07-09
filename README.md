@@ -7,7 +7,7 @@ Install:
 Run: 
 * ```yarn start```
 
-OS: Mac OS, Windows (I develop on Mac, but app on Windows looks nice)
+OS: Mac OS, Windows (I develop on Mac, but app on Windows app looks nice)
 
 Browser: Chrome latest
 
