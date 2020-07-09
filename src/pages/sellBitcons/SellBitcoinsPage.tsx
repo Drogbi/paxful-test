@@ -5,11 +5,7 @@ import { DISPUTES_NAV, MY_TEAM_NAV, OVERVIEW_NAV, SELL_BITCOINS_ROUTE, TRADE_HIS
 import { Page, PagePlaceholder } from '../../shared/components';
 import { Trades } from './trades/Trades';
 
-interface SellBitcoinsPageProps {
-
-}
-
-export const SellBitcoinsPage: React.FC<SellBitcoinsPageProps> = (props) => {
+export const SellBitcoinsPage: React.FC = () => {
     let { path } = useRouteMatch();
     return (
         <Page>

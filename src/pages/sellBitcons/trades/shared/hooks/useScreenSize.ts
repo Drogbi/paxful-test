@@ -10,6 +10,6 @@ export const useScreenSize = (): TradesLayout => {
         { size: TradesLayout.SMALL, isActive: isSmall },
         { size: TradesLayout.MEDIUM, isActive: isMedium },
         { size: TradesLayout.LARGE, isActive: isLarge }
-    ].find((screen) => screen.isActive)?.size || TradesLayout.LARGE;
+    ].find((screen) => screen.isActive)?.size || TradesLayout.SMALL;
 };
 
