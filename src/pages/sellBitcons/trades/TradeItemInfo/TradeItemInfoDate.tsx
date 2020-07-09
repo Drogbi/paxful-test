@@ -14,7 +14,8 @@ export const TradeItemInfoDate: React.FC<TradeItemInfoDateProps> = ({ date }) =>
     // to update ${startDate} ago in real-time
     useEffect(() => {
         const observable = timer(0, 60 * 1000);
-        observable.subscribe(() => forceUpdate());
+        const subscription = observable.subscribe(() => forceUpdate());
+        return subscription.unsubscribe();
     }, []);
 
     return (
