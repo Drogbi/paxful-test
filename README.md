@@ -33,7 +33,7 @@ Requirements:
 - [x] Trade information
 - [x] Redux
 - [x] Hardcoded data
-- [x] Real-time data pulling
+- [x] Real-time data pulling (60s timeout)
 
 Note: 
 * Delete button moved from top to right info panel because of design issues on mobile layout
