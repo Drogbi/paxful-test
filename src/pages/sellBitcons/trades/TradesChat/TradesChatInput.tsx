@@ -58,7 +58,7 @@ export const TradesChatInput: React.FC<TradesChatInputProps> = (props) => {
         <div className={ css.tradesChatInput }>
             <Avatar className={ css.avatar } url={ currentUser.avatarUrl }/>
             <Switch onChange={ onUserChange } value={ isUserChanged }/>
-            <input className={ css.input } onKeyDown={ handleKeyDown } value={ inputValue || '' } onChange={ onInputChange } type="text"/>
+            <input placeholder='Type...' className={ css.input } onKeyDown={ handleKeyDown } value={ inputValue || '' } onChange={ onInputChange } type="text"/>
             <button className={ css.sendButton } onClick={ onSend }>SEND</button>
         </div>
     );
